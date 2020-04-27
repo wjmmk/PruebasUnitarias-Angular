@@ -1,6 +1,6 @@
 # PruebasUnitarias
 
-Se recomienda en este proyecto prestarle mayormente atencion a los archivos con extension (.spec.ts); donde realmente va a estar toda la chicha de todo lo aqui aplicado.
+Se recomienda en este proyecto prestarle mayormente atencion a los archivos con extension (.spec.ts); donde realmente va a estar toda la chicha del ASUNTO.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
