@@ -3,10 +3,12 @@
 export interface User {
   login?: string;
   id?: number;
+  postId?: number;
   node_id?: string;
   avatar_url?: string;
   gravatar_id?: string;
   url?: string;
+  email?: string;
   html_url?: string;
   followers_url?: string;
   following_url?: string;
@@ -18,5 +20,7 @@ export interface User {
   events_url?: string;
   received_events_url?: string;
   type?: string;
+  body?: string;
+  name?: string;
   site_admin?: boolean;
 }

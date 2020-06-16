@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.no-hidden{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  visibility: visible;
+}

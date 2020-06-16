@@ -7,30 +7,83 @@
 </head>
 <body>
 
-<div>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">ID</th>
-        <th scope="col">Login</th>
-        <th scope="col">Type</th>
-        <th scope="col">Url</th>
-        <th scope="col">Avatar</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of usuarios; let i = index">
-        <th scope="row">{{i+1}}</th>
-        <td>{{item.id}}</td>
-        <td>{{item.login}}</td>
-        <td>{{item.type}}</td>
-        <td>{{item.organizations_url}}</td>
-        <td><img [src]="item.avatar_url" width="45px"></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    <div>
+      <table class="table table-striped">
+        <!-- Para la data traida de GitHub -->
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID</th>
+          <th scope="col">Login</th>
+          <th scope="col">Type</th>
+          <th scope="col">Url</th>
+          <th scope="col">Avatar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of usuariosGithub; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{item.id}}</td>
+          <td>{{item.login}}</td>
+          <td>{{item.type}}</td>
+          <td>{{item.organizations_url}}</td>
+          <td><img [src]="item.avatar_url" width="45px"></td>
+        </tr>
+      </tbody>
+      </table>
+    </div><hr>
+
+
+    <!--
+    <div>
+      <table class="table table-striped">
+
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID</th>
+          <th scope="col">Login</th>
+          <th scope="col">Type</th>
+          <th scope="col">Url</th>
+          <th scope="col">Avatar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of usuariosPlaceholder; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{item.id}}</td>
+          <td>{{item.postId}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.body}}></td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+
+  -->
+
+
+  <div class="container" infiniteScroll [infiniteScrollDistance]="2"  (scrolled)="onScroll()">
+    <h1 style="text-align: center">INFINITE SCROLL EXAMPLE</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col"><strong>TEXT</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let line of linesToWrite; index as i">
+          <th scope="row">{{i}}</th>
+          <th scope="row">{{line}}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+    <app-post></app-post>
 
 </body>
 </html>

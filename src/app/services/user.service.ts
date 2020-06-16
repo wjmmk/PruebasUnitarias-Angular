@@ -8,12 +8,17 @@ import { User } from '../models/user.interface';
 })
 export class UserService {
 
-  api = 'https://api.github.com/users?since=135';
+   api = 'https://api.github.com/users?since=135';
+
+  api2 = 'https://jsonplaceholder.typicode.com/comments';
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<User[]> {
+  getAllGithub(): Observable<User[]> {
     return this.http.get<User[]>(`${this.api}`);
+  }
+  getAllPlaceholder(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.api2}`);
   }
 }
 
